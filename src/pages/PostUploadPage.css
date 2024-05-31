@@ -1,0 +1,9 @@
+.post-upload-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  h1 {
+    color: rgb(56, 169, 103);
+    font-size: 1.5rem;
+  }
+}

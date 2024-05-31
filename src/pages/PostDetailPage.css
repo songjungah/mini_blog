@@ -1,0 +1,9 @@
+.post-detail-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  h1 {
+    color: rgb(173, 173, 218);
+    font-size: 1.5rem;
+  }
+}
