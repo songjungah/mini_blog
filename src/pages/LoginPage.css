@@ -31,7 +31,7 @@ p{
 
 .email-box{
   margin: 0;
-  padding: 20px;
+  padding: 10px;
 }
 
 input {
@@ -92,4 +92,10 @@ input::placeholder {
   padding-left: 20px;
   font-weight: bold;
   color: #0095f6;
+}
+
+.error-message {
+  font-size: 14px;
+  text-align: left !important;
+  color: tomato;
 }
