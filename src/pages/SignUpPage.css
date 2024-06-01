@@ -72,6 +72,9 @@ input::placeholder {
   color: lightgrey;
 }
 
+input:focus {
+  outline: 1px solid #0095f6;
+}
 
 .last-box{
   display: flex;
