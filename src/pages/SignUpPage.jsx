@@ -55,10 +55,10 @@ export default function SignUpPage() {
     // 비밀번호 유효성 검사
     const confirmPWdRegEx = /^[A-Aa-z0-9](?=.*[!@#$%^&*?~_]).{8,}$/
 
-    if(password == confirmPw){
+    if(confirmPWdRegEx.test(confirmPw)){
       setConfirmPwValid(true);
     }else{
-      setConfirmPwValid(false)
+      setConfirmPwValid(false);
     }
   }
 
@@ -89,7 +89,9 @@ export default function SignUpPage() {
             <div className="password-box-2">
               <p>비밀번호 확인</p>
               <input id={"confirmPw"} type="password" name="confirmPw" placeholder="비밀번호를 한번 더 입력해주세요" value={confirmPw} onChange={handleConfirmPassword}/>
-              <div className="error-message">{password !== confirmPw && <div>비밀번호가 다릅니다.</div>}</div>
+              <div className="error-message">{
+                confirmPw !== password && <div>비밀번호가 같지 않습니다.</div>
+              }</div>
             </div>
             {/* <div className="name-box">
               <p>이름</p>
@@ -104,3 +106,7 @@ export default function SignUpPage() {
     </>
   );
 }
+
+// !password && !passwordValid (
+//   <div>비밀번호가 다릅니다.</div>
+// )
