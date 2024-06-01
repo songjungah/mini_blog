@@ -60,14 +60,18 @@ export default function LoginPage() {
         <div className="input-box">
           <div className="email-box">
             <p>이메일 주소</p>
-              <div className="email-wrap">
+              <div className="input-wrap">
+                <FaUser />
                 <input id={"email"} type="text" name="email" placeholder="email@gmail.com" value={email} onChange={handelEmailChange}/>
               </div>
           </div>
           <div className="error-message">{!emailValid && email.length > 0 && <div>이메일을 올바르게 입력해주세요.</div>}</div>
           <div className="password-box">
             <p>비밀번호</p>
-            <input id={"password"} type="password" name="password" placeholder="영문, 숫자, 특수문자 포함 8자 이상" value={password} onChange={handlePasswordChange}/>
+              <div className="input-wrap">
+              <RiLockPasswordLine />
+              <input id={"password"} type="password" name="password" placeholder="영문, 숫자, 특수문자 포함 8자 이상" value={password} onChange={handlePasswordChange}/>
+              </div>  
           </div>
           <div className="error-message">{!passwordValid && password.length > 0 && <div>영문, 숫자, 특수문자 포함 8자 이상 입력해주세요.</div>}</div>
           <button className="login" type="button" >로그인</button>
