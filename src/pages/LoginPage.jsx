@@ -41,7 +41,7 @@ export default function LoginPage() {
     // console.log("password : ", e.target.value)
 
     // 비밀번호 유효성 검사
-    const passwordRegEx = /^[A-Za-z0-9]{8,20}$/
+    const passwordRegEx = /^[A-Za-z0-9](?=.*[!@#$%^&*?~_]).{8,}$/
     if(passwordRegEx.test(password)){
       setPasswordValid(true);
     }else{
@@ -60,7 +60,9 @@ export default function LoginPage() {
         <div className="input-box">
           <div className="email-box">
             <p>이메일 주소</p>
-            <input id={"email"} type="text" name="email" placeholder="email@gmail.com" value={email} onChange={handelEmailChange}/>
+              <div className="email-wrap">
+                <input id={"email"} type="text" name="email" placeholder="email@gmail.com" value={email} onChange={handelEmailChange}/>
+              </div>
           </div>
           <div className="error-message">{!emailValid && email.length > 0 && <div>이메일을 올바르게 입력해주세요.</div>}</div>
           <div className="password-box">
